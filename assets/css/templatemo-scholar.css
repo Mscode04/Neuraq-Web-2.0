@@ -1211,7 +1211,7 @@ Testimonials Style
 }
 
 .testimonials .item {
-  background-color: #0f4c75;
+  background-color: #0f4c75 !important;
   border-radius: 25px;
   padding: 80px;
 }
