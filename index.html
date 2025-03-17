@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="icon" href="/assets/images/NT LOGO PNG WHITE.png" type="image/png">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let link = document.getElementById("career-link");
+        link.href = "career.html"; // Ensures correct navigation
+      });
+    </script>
   </head>
 
 <body>
@@ -85,7 +91,7 @@
                 <p>Neuraq Technologies delivers advanced digital solutions crafted to meet diverse business needs. Our services leverage modern frameworks, ensuring efficient, user-focused applications across various sectors.</p>
                 <div class="buttons">
                   <div class="main-button">
-                    <a href="#services">For Services</a>
+                    <a id="career-link" href="career.html">Career at Neuraq</a>
                   </div>
                   <div class="icon-button">
                     <a href="https://www.instagram.com/neuraq.in/profilecard/?igsh=Z21uMDh1NnN3YWF2"><i class="fa fa-play"></i>More About </a>
