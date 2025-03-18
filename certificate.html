@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Search</title>
+    <link rel="stylesheet" href="certificate.css">
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getFirestore, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDETyG9fp2FPE4dUXunj4EKFu0xEP6gZLg",
+            authDomain: "certificate-2f7e1.firebaseapp.com",
+            projectId: "certificate-2f7e1",
+            storageBucket: "certificate-2f7e1.appspot.com",
+            messagingSenderId: "181216167634",
+            appId: "1:181216167634:web:0574a6211da045a216cf0b",
+            measurementId: "G-GTTX917L86"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function searchCertificate() {
+            const certId = document.getElementById("certIdInput").value.trim();
+            if (!certId) {
+                alert("Please enter a Certificate ID");
+                return;
+            }
+
+            try {
+                const q = query(collection(db, "certificates"), where("certificate-id", "==", certId));
+                const querySnapshot = await getDocs(q);
+
+                if (!querySnapshot.empty) {
+                    document.getElementById("resultTable").style.display = "table";
+                    let resultBody = document.getElementById("resultBody");
+                    resultBody.innerHTML = "";
+
+                    querySnapshot.forEach((doc) => {
+                        const data = doc.data();
+                        resultBody.innerHTML += `
+                            <tr>
+                                <td data-label="Name"><span>${data.name}</span></td>
+                                <td data-label="Certificate ID"><span>${data['certificate-id']}</span></td>
+                                <td data-label="Purpose"><span>${data.purpose}</span></td>
+                                <td data-label="Type"><span>${data.type}</span></td>
+                                <td data-label="Date of Issue"><span>${data.date_of_issued}</span></td>
+                            </tr>`;
+                    });
+                } else {
+                    alert("No certificate found with this ID");
+                }
+            } catch (error) {
+                console.error("Error searching for certificate:", error);
+                alert("Error searching for certificate. Please try again.");
+            }
+        }
+
+        window.searchCertificate = searchCertificate;
+    </script>
+</head>
+
+<body>
+   
+        <header class="career-header">
+            <h1>Neuraq Technologies</h1>
+            <p>Certificate Verification</p>
+        </header>
+        <div class="Like">
+            <div class="certificate-search">
+                <h2>Search Certificate</h2>
+                <input type="text" id="certIdInput" placeholder="Enter Certificate ID">
+                <button onclick="searchCertificate()">Search</button>
+            </div>
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Certificate ID</th>
+                        <th>Purpose</th>
+                        <th>Type</th>
+                        <th>Date of Issue</th>
+                    </tr>
+                </thead>
+                <tbody id="resultBody"></tbody>
+            </table>
+        </div>
+</body>
+
+
+</html>

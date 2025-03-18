@@ -1,0 +1,209 @@
+/* certificate.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Adding fade-in animation for the body */
+body {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.Like {
+    padding: 20px;
+}
+
+/* Header */
+.career-header {
+    background-color: #004080; /* Dark blue */
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    animation: slideDown 0.8s ease-in-out;
+}
+
+.career-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.career-header p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+}
+
+/* Certificate Search Section */
+.certificate-search {
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.certificate-search h2 {
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+/* Input animation */
+.certificate-search input {
+    padding: 8px;
+    width: 250px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input focus effect */
+.certificate-search input:focus {
+    border-color: #004080;
+    box-shadow: 0 0 8px rgba(0, 64, 128, 0.5);
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Button animation */
+.certificate-search button {
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+/* Button hover effect */
+.certificate-search button:hover {
+    background-color: #00509e;
+    transform: scale(1.1);
+}
+
+/* Table animation */
+#resultTable {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    display: none;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+#resultTable th, #resultTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Adding hover effect on rows */
+#resultTable tbody tr {
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#resultTable tbody tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02);
+}
+
+/* Responsive Design for Small Devices */
+@media (max-width: 768px) {
+    .certificate-search input {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .certificate-search button {
+        width: 100%;
+    }
+
+    #resultTable {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    #resultTable, #resultTable thead, #resultTable tbody, #resultTable th, #resultTable td, #resultTable tr {
+        display: block;
+    }
+
+    #resultTable thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #resultTable tr {
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    #resultTable td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding: 12px 10px 12px 50%;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    #resultTable td:before {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+        transform: translateY(-50%);
+        color: #004080;
+    }
+
+    #resultTable td span {
+        flex: 1;
+        padding-left: 10px;
+    }
+
+    #resultTable td:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
