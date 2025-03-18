@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Neu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+
+    <!-- Admin Panel Section -->
+    <div class="admin-container container mt-4" id="adminContainer" style="display: none;">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Admin Panel</h2>
+            <button class="btn btn-danger" onclick="logout()">Logout</button>
+        </div>
+        <button class="btn btn-success mb-3" onclick="openAddModal()">Add New Certificate</button>
+        <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search by Name or Certificate ID" oninput="searchCertificates()">
+        <table class="table table-bordered" id="certificatesTable">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Certificate ID</th>
+                    <th>Date of Issue</th>
+                    <th>DOB</th>
+                    <th>Purpose</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="certificatesBody"></tbody>
+        </table>
+    </div>
+
+    <!-- Add Certificate Modal -->
+    <div id="addModal" class="modal">
+        <div class="modal-content card p-4">
+            <h2 class="text-center">Add New Certificate</h2>
+            <input type="text" id="addName" class="form-control mb-3" placeholder="Name">
+            <input type="text" id="addAddress" class="form-control mb-3" placeholder="Address">
+            <input type="text" id="addCertId" class="form-control mb-3" placeholder="Certificate ID">
+            <input type="date" id="addDateIssued" class="form-control mb-3" placeholder="Date of Issue">
+            <input type="date" id="addDob" class="form-control mb-3" placeholder="Date of Birth">
+            <input type="text" id="addPurpose" class="form-control mb-3" placeholder="Purpose">
+            <input type="text" id="addType" class="form-control mb-3" placeholder="Type">
+            <button class="btn btn-success w-100 mb-2" onclick="addCertificate()">Add</button>
+            <button class="btn btn-secondary w-100" onclick="closeAddModal()">Close</button>
+        </div>
+    </div>
+    <!-- Login Section -->
+    <div class="login-container d-flex justify-content-center align-items-center vh-100" id="loginContainer">
+        <div class="card p-4">
+            <h2 class="text-center">Admin Login</h2>
+            <input type="password" id="passcodeInput" class="form-control mb-3" placeholder="Enter Passcode">
+            <button class="btn btn-primary w-100" onclick="login()">Login</button>
+        </div>
+    </div>
+    <script type="module" src="admin.js"></script>
+</body>
+
+</html>
