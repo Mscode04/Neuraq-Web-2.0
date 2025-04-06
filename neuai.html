@@ -325,6 +325,86 @@
                 font-size: 1.4rem;
             }
         }
+        /* Feedback Section */
+.feedback-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.feedback-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feedback-card {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.feedback-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.feedback-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    border: 3px solid var(--primary);
+}
+
+.feedback-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feedback-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.rating {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.feedback-text {
+    font-style: italic;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .feedback-section {
+        padding: 60px 0;
+    }
+    
+    .feedback-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .feedback-cards {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
@@ -393,6 +473,83 @@
                 <div class="card-content">
                     <h3>AI for Productivity</h3>
                     <p>Boost your work efficiency with AI tools for scheduling, email management, and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="feedback-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Students Say</h2>
+            </div>
+            
+            <div class="feedback-cards">
+                <!-- Feedback 1 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <div class="feedback-img">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah K.">
+                        </div>
+                        <div class="feedback-info">
+                            <h4>Sarah K.</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="feedback-text">
+                        "The AI Productivity course transformed how I work! I've saved 10+ hours weekly using the automation tools they taught."
+                    </p>
+                </div>
+                
+                <!-- Feedback 2 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <div class="feedback-img">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Raj P.">
+                        </div>
+                        <div class="feedback-info">
+                            <h4>Raj P.</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="feedback-text">
+                        "Never thought I could understand AI, but the fundamentals course made it so accessible. Highly recommend!"
+                    </p>
+                </div>
+                
+                <!-- Feedback 3 -->
+                <div class="feedback-card">
+                    <div class="feedback-header">
+                        <div class="feedback-img">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya M.">
+                        </div>
+                        <div class="feedback-info">
+                            <h4>Priya M.</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="feedback-text">
+                        "The smart home module helped me automate my entire apartment. Worth every penny!"
+                    </p>
                 </div>
             </div>
         </div>
