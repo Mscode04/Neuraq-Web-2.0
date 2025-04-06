@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in Daily Life Course</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4a6bff;
+            --secondary: #ff6b6b;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section with BG Image */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1677442135136-760c813a743d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+        }
+
+        /* Course Overview */
+        .section-title {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark);
+        }
+
+        .course-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .course-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .card-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+
+        .apply-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Special Offers */
+        .special-offers {
+            background-color: #f0f4ff;
+            padding: 50px 0;
+            margin: 40px 0;
+        }
+
+        .offer-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border: 2px dashed var(--secondary);
+        }
+
+        .offer-card h3 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .offer-card p {
+            margin-bottom: 15px;
+        }
+
+        .offer-tag {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .offer-tag:hover {
+            background-color: #e05555;
+            transform: translateY(-2px);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            text-align: center;
+            padding: 30px 0;
+            background-color: white;
+            margin-top: 40px;
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with BG Image -->
+    <section class="hero">
+        <div class="container">
+            <h1>NeuAI: Empowering You with AI to Master Skills and Maximize Productivity</h1>
+            <p>Discover how artificial intelligence can streamline your routine and elevate your performance.</p>
+            <a href="#courses" class="cta-button">Register</a>
+        </div>        
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="special-offers">
+        <div class="container">
+            <div class="section-title">
+                <h2>Special Offers</h2>
+            </div>
+            
+            <div class="offer-card">
+                <h3>Early Bird Special</h3>
+                <p>Enroll before August 31st and get 30% off all courses!</p>
+                <a href="#courses" class="offer-tag">Apply</a>
+            </div>
+            
+            <!-- <div class="offer-card">
+                <h3>Referral Bonus</h3>
+                <p>Refer a friend and both get 1 month free access to our premium resources.</p>
+                <span class="offer-tag">Offer ends soon!</span>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Course Overview Section -->
+    <section class="container" id="courses">
+        <div class="section-title">
+            <h2>Course Modules</h2>
+        </div>
+        
+        <div class="course-cards">
+            <!-- Module 1 -->
+            <div class="course-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="AI Basics">
+                </div>
+                <div class="card-content">
+                    <h3>AI Fundamentals</h3>
+                    <p>Understand the core concepts of artificial intelligence and how it's transforming our world.</p>
+                    <!-- <div class="card-meta">
+                        <div class="price">Free <span class="old-price">$49</span></div>
+                        <button class="apply-btn">Start Now</button>
+                    </div> -->
+                </div>
+            </div>
+            
+            <!-- Module 2 -->
+            <div class="course-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="AI at Home">
+                </div>
+                <div class="card-content">
+                    <h3>AI in Smart Homes</h3>
+                    <p>Learn to automate your home with AI-powered devices for comfort and efficiency.</p>
+                    <!-- <div class="card-meta">
+                        <div class="price">$99 <span class="old-price">$149</span></div>
+                        <button class="apply-btn">Enroll</button>
+                    </div> -->
+                </div>
+            </div>
+            
+            <!-- Module 3 -->
+            <div class="course-card">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="AI Productivity">
+                </div>
+                <div class="card-content">
+                    <h3>AI for Productivity</h3>
+                    <p>Boost your work efficiency with AI tools for scheduling, email management, and more.</p>
+                    <!-- <div class="card-meta">
+                        <div class="price">$129 <span class="old-price">$199</span></div>
+                        <button class="apply-btn">Enroll</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Info -->
+    <section class="contact-info">
+        <div class="container">
+            <p>Have questions? Call us at:</p>
+            <a href="tel:+15551234567">91+ 8089124307</a>
+        </div>
+    </section>
+
+
+</body>
+</html>
