@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuraq | Digital Palliative Care Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2a5c8d;
+            --secondary: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), #4a89dc);
+            color: var(--white);
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--white);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .mission-vision-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .mission-vision-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .mission-vision-card ul {
+            list-style-type: none;
+        }
+        
+        .mission-vision-card li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .mission-vision-card li:before {
+            content: "•";
+            color: var(--secondary);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Advantages Section */
+        .advantages {
+            background-color: var(--light);
+        }
+        
+        .advantages-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .advantage-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .advantage-icon {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .advantage-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            background-color: var(--white);
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .pricing-card h4 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 2rem;
+            color: var(--secondary);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-card ul {
+            list-style-type: none;
+            margin-bottom: 25px;
+        }
+        
+        .pricing-card li {
+            margin-bottom: 10px;
+        }
+        
+        /* Collaboration Section */
+        .collaboration {
+            background-color: var(--white);
+        }
+        
+        .collaboration-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .contact-card h4 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-details p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--secondary);
+            width: 20px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+   <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Redefining Palliative Care for the Digital Age</h2>
+            <p>Neuraq Technologies delivers transformative digital solutions that empower caregivers, nurses, and families to provide compassionate palliative care.</p>
+            <a href="https://neuraq.in/ptv-demo" class="cta-button">View Demo</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h3>Our Vision & Mission</h3>
+                <p>Transforming palliative care through technology</p>
+            </div>
+            <div class="about-content">
+                <div class="mission-vision-card">
+                    <h3>Our Vision</h3>
+                    <ul>
+                        <li>Revolutionize home-based palliative care with a digital platform</li>
+                        <li>Empower nurses, caregivers, and families to deliver timely and compassionate care</li>
+                        <li>Bridge the gap between technology and healthcare</li>
+                        <li>Enable seamless communication and real-time patient updates</li>
+                        <li>Improve productivity through streamlined documentation and faster workflows</li>
+                        <li>Allow caregivers to view medication details and diagnoses on mobile devices</li>
+                        <li>Set a new standard in palliative care, enhancing the lives of patients and their families</li>
+                    </ul>
+                </div>
+                <div class="mission-vision-card">
+                    <h3>Our Mission</h3>
+                    <ul>
+                        <li>To transform home-based palliative care by delivering a smart, accessible, and compassionate digital solution</li>
+                        <li>Support every stakeholder in the care journey</li>
+                        <li>Enhance the productivity and quality of patient care through seamless documentation</li>
+                        <li>Enable real-time communication and mobile access to vital medical information</li>
+                        <li>Empower caregivers, nurses, and families with innovative tools</li>
+                        <li>Simplify caregiving and ensure continuity of care</li>
+                        <li>Uphold the dignity and comfort of every patient</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h3>App Features</h3>
+                <p>Comprehensive tools for palliative care management</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-procedures"></i>
+                    </div>
+                    <h4>NHC(E) & DHC</h4>
+                    <p>Comprehensive patient health records and documentation</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h4>VHC & GVHC</h4>
+                    <p>Virtual health consultations and group sessions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-injured"></i>
+                    </div>
+                    <h4>Patient Page</h4>
+                    <p>Centralized patient information and care plans</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h4>Medicine RT</h4>
+                    <p>Real-time medication tracking and reminders</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h4>Report Sorting</h4>
+                    <p>Organized medical reports and documents</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>AI Chatbot</h4>
+                    <p>24/7 assistance for caregivers and patients</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h4>Download & Print</h4>
+                    <p>Easy export of patient records and reports</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Care Taker Interface</h4>
+                    <p>Dedicated interface for caregivers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Device Compatibility</h4>
+                    <p>Works across all devices</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <h4>Next Day Schedule</h4>
+                    <p>Plan and view next day's schedule</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-toggle-on"></i>
+                    </div>
+                    <h4>Easy Activation</h4>
+                    <p>Simple to activate and deactivate features</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="advantages" id="advantages">
+        <div class="container">
+            <div class="section-title">
+                <h3>Key Advantages</h3>
+                <p>Why healthcare providers choose Neuraq</p>
+            </div>
+            <div class="advantages-list">
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="advantage-content">
+                        <h4>Easy to Add Data</h4>
+                        <p>Streamlined data entry with intuitive interfaces and default templates</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="advantage-content">
+                        <h4>More Default Data</h4>
+                        <p>Pre-populated templates and common entries save time</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="advantage-content">
+                        <h4>Easy to Read and Share</h4>
+                        <p>Clear, organized information that's simple to share with care teams</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="advantage-content">
+                        <h4>Easy to Calculate</h4>
+                        <p>Automated calculations for medications and treatments</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="advantage-content">
+                        <h4>Save Time</h4>
+                        <p>Reduce administrative burden and focus more on patient care</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="advantage-content">
+                        <h4>More Focus on Patient</h4>
+                        <p>Streamlined workflows allow caregivers to spend more quality time with patients</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="advantage-content">
+                        <h4>Emergency Features</h4>
+                        <p>Quick access to call ambulance or palliative care teams when needed</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="advantage-content">
+                        <h4>Easy to Donate</h4>
+                        <p>Simple donation process to support palliative care initiatives</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <!-- <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h3>Pricing</h3>
+                <p>Affordable solutions for palliative care management</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h4>Special Offer</h4>
+                    <div class="price">₹45,999 INR</div>
+                    <p>For first 15 palliative care providers</p>
+                    <ul>
+                        <li>Complete application</li>
+                        <li>Database included if needed</li>
+                        <li>Priority implementation</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h4>Standard Pricing</h4>
+                    <div class="price">₹52,898.85 INR</div>
+                    <p>Regular pricing after initial offer</p>
+                    <ul>
+                        <li>Complete application</li>
+                        <li>Database included if needed</li>
+                        <li>Full support package</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h4>Database Setup</h4>
+                    <div class="price">₹15,000 INR</div>
+                    <p>Firebase Blaze Plan Deposit</p>
+                    <ul>
+                        <li>Initial deposit for Firebase services</li>
+                        <li>Pay-as-you-go model</li>
+                        <li>Credit remains valid until used</li>
+                    </ul>
+                    <p><small>Note: Higher deposits may be required for larger projects</small></p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Collaboration Section -->
+    <section class="collaboration" id="collaborate">
+        <div class="container">
+            <div class="section-title">
+                <h3>Contact Us</h3>
+                <p>Get in touch to learn more about our palliative care solution</p>
+            </div>
+            <div class="collaboration-content">
+                <div class="contact-card">
+                    <h4>Contact Details</h4>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> Phone: 8089124307</p>
+                        <p><i class="fas fa-envelope"></i> Email: hello@neuraq.in</p>
+                        <p><i class="fas fa-calendar-alt"></i> Detailed Demo: 8157980307</p>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <h4>Implementation Support</h4>
+                    <p>Our team is ready to help you implement Neuraq's palliative care solution in your organization.</p>
+                    <p>Contact us for customized demonstrations and implementation planning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
