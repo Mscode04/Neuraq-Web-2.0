@@ -1,594 +1,837 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neuraq | Digital Palliative Care Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Base Styles */
-        :root {
-            --primary: #2a5c8d;
-            --secondary: #e74c3c;
-            --light: #f8f9fa;
-            --dark: #2c3e50;
-            --white: #ffffff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary), #4a89dc);
-            color: var(--white);
-            padding: 150px 0 80px;
-            text-align: center;
-        }
-        
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        
-        .cta-button:hover {
-            background-color: #c0392b;
-            transform: translateY(-3px);
-        }
-        
-        /* About Section */
-        .about {
-            background-color: var(--white);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .mission-vision-card {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        }
-        
-        .mission-vision-card h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-        
-        .mission-vision-card ul {
-            list-style-type: none;
-        }
-        
-        .mission-vision-card li {
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .mission-vision-card li:before {
-            content: "•";
-            color: var(--secondary);
-            font-size: 1.5rem;
-            position: absolute;
-            left: 0;
-            top: -5px;
-        }
-        
-        /* Features Section */
-        .features {
-            background-color: var(--white);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h3 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        
-        .feature-card {
-            background-color: var(--light);
-            border-radius: 8px;
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 15px;
-        }
-        
-        .feature-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        
-        /* Advantages Section */
-        .advantages {
-            background-color: var(--light);
-        }
-        
-        .advantages-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .advantage-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-            background-color: var(--white);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        }
-        
-        .advantage-icon {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-        
-        .advantage-content h4 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-        
-        /* Pricing Section */
-        .pricing {
-            background-color: var(--white);
-        }
-        
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .pricing-card {
-            background-color: var(--light);
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .pricing-card h4 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        .price {
-            font-size: 2rem;
-            color: var(--secondary);
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        
-        .pricing-card ul {
-            list-style-type: none;
-            margin-bottom: 25px;
-        }
-        
-        .pricing-card li {
-            margin-bottom: 10px;
-        }
-        
-        /* Collaboration Section */
-        .collaboration {
-            background-color: var(--white);
-        }
-        
-        .collaboration-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .contact-card {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 8px;
-        }
-        
-        .contact-card h4 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .contact-details p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .contact-details i {
-            margin-right: 10px;
-            color: var(--secondary);
-            width: 20px;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            section {
-                padding: 60px 0;
-            }
-            
-            .hero {
-                padding: 120px 0 60px;
-            }
-            
-            .hero h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <meta charset="utf-8">
+    <title>FitApp - Mobile App HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="ptv-demo/ptv-demo/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="ptv-demo/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="ptv-demo/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="ptv-demo/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="ptv-demo/css/style.css" rel="stylesheet">
 </head>
-<body>
-   <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>Redefining Palliative Care for the Digital Age</h2>
-            <p>Neuraq Technologies delivers transformative digital solutions that empower caregivers, nurses, and families to provide compassionate palliative care.</p>
-            <a href="https://mscode04.github.io/demo-ptv-app/" class="cta-button">View Demo</a>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h3>Our Vision & Mission</h3>
-                <p>Transforming palliative care through technology</p>
-            </div>
-            <div class="about-content">
-                <div class="mission-vision-card">
-                    <h3>Our Vision</h3>
-                    <ul>
-                        <li>Revolutionize home-based palliative care with a digital platform</li>
-                        <li>Empower nurses, caregivers, and families to deliver timely and compassionate care</li>
-                        <li>Bridge the gap between technology and healthcare</li>
-                        <li>Enable seamless communication and real-time patient updates</li>
-                        <li>Improve productivity through streamlined documentation and faster workflows</li>
-                        <li>Allow caregivers to view medication details and diagnoses on mobile devices</li>
-                        <li>Set a new standard in palliative care, enhancing the lives of patients and their families</li>
-                    </ul>
-                </div>
-                <div class="mission-vision-card">
-                    <h3>Our Mission</h3>
-                    <ul>
-                        <li>To transform home-based palliative care by delivering a smart, accessible, and compassionate digital solution</li>
-                        <li>Support every stakeholder in the care journey</li>
-                        <li>Enhance the productivity and quality of patient care through seamless documentation</li>
-                        <li>Enable real-time communication and mobile access to vital medical information</li>
-                        <li>Empower caregivers, nurses, and families with innovative tools</li>
-                        <li>Simplify caregiving and ensure continuity of care</li>
-                        <li>Uphold the dignity and comfort of every patient</li>
-                    </ul>
-                </div>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         </div>
-    </section>
+        <!-- Spinner End -->
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-title">
-                <h3>App Features</h3>
-                <p>Comprehensive tools for palliative care management</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-procedures"></i>
-                    </div>
-                    <h4>NHC(E) & DHC</h4>
-                    <p>Comprehensive patient health records and documentation</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h4>VHC & GVHC</h4>
-                    <p>Virtual health consultations and group sessions</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-injured"></i>
-                    </div>
-                    <h4>Patient Page</h4>
-                    <p>Centralized patient information and care plans</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-pills"></i>
-                    </div>
-                    <h4>Medicine RT</h4>
-                    <p>Real-time medication tracking and reminders</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h4>Report Sorting</h4>
-                    <p>Organized medical reports and documents</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h4>AI Chatbot</h4>
-                    <p>24/7 assistance for caregivers and patients</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-download"></i>
-                    </div>
-                    <h4>Download & Print</h4>
-                    <p>Easy export of patient records and reports</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h4>Care Taker Interface</h4>
-                    <p>Dedicated interface for caregivers</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h4>Device Compatibility</h4>
-                    <p>Works across all devices</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-day"></i>
-                    </div>
-                    <h4>Next Day Schedule</h4>
-                    <p>Plan and view next day's schedule</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-toggle-on"></i>
-                    </div>
-                    <h4>Easy Activation</h4>
-                    <p>Simple to activate and deactivate features</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Advantages Section -->
-    <section class="advantages" id="advantages">
-        <div class="container">
-            <div class="section-title">
-                <h3>Key Advantages</h3>
-                <p>Why healthcare providers choose Neuraq</p>
-            </div>
-            <div class="advantages-list">
-                <div class="advantage-item">
-                    <div class="advantage-icon">
-                        <i class="fas fa-check"></i>
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0" id="home">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <div class="nav-logo-op"><img src="ptv-demo/img/mian-logo-bk.png" alt=""></div>
+                    <!-- <img src="ptv-demo/img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="#home" class="nav-item nav-link active">Home</a>
+                        <a href="#about" class="nav-item nav-link">About</a>
+                        <a href="#feature" class="nav-item nav-link">Feature</a>
+                        <a href="#pricing" class="nav-item nav-link">Pricing</a>
+                        <a href="#review" class="nav-item nav-link">Review</a>
+                        <a href="#contact" class="nav-item nav-link">Contact</a>
                     </div>
-                    <div class="advantage-content">
-                        <h4>Easy to Add Data</h4>
-                        <p>Streamlined data entry with intuitive interfaces and default templates</p>
-                    </div>
+                    <a href="" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Start Free Trial</a>
                 </div>
-                <div class="advantage-item">
-                    <div class="advantage-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="advantage-content">
-                        <h4>More Default Data</h4>
-                        <p>Pre-populated templates and common entries save time</p>
-                    </div>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="advantage-content">
-                        <h4>Easy to Read and Share</h4>
-                        <p>Clear, organized information that's simple to share with care teams</p>
-                    </div>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="advantage-content">
-                        <h4>Easy to Calculate</h4>
-                        <p>Automated calculations for medications and treatments</p>
-                    </div>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="advantage-content">
-                        <h4>Save Time</h4>
-                        <p>Reduce administrative burden and focus more on patient care</p>
-                    </div>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="advantage-content">
-                        <h4>More Focus on Patient</h4>
-                        <p>Streamlined workflows allow caregivers to spend more quality time with patients</p>
-                    </div>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="advantage-content">
-                        <h4>Emergency Features</h4>
-                        <p>Quick access to call ambulance or palliative care teams when needed</p>
-                    </div>
-                </div>
-                <div class="advantage-item">
-                    <div class="advantage-icon">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <div class="advantage-content">
-                        <h4>Easy to Donate</h4>
-                        <p>Simple donation process to support palliative care initiatives</p>
+            </nav>
+
+            <div class="container-xxl bg-primary hero-header">
+                <div class="container px-lg-5">
+                    <div class="row g-5">
+                        <div class="col-lg-8 text-center text-lg-start">
+                            <h1 class="text-white mb-4 animated slideInDown">Revolutionizing Palliative Care Through Digital Innovation</h1>
+                            <p class="text-white pb-3 animated slideInDown">Say goodbye to paperwork. Welcome to real-time, efficient, and compassionate care.</p>
+                            <a href="" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill me-3 animated slideInLeft">Book a Demo</a>
+                            <a href="" class="btn btn-secondary-gradient py-sm-3 px-4 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
+                        </div>
+                        <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="owl-carousel screenshot-carousel">
+                                <img class="img-fluid" src="ptv-demo/img/screenshot-1.jpg" alt="">
+                                <img class="img-fluid" src="ptv-demo/img/screenshot-2.jpg" alt="">
+                                <img class="img-fluid" src="ptv-demo/img/screenshot-3.jpg" alt="">
+                                <img class="img-fluid" src="ptv-demo/img/screenshot-4.jpg" alt="">
+                                <img class="img-fluid" src="ptv-demo/img/screenshot-5.jpg" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <!-- Navbar & Hero End -->
 
-    <!-- Pricing Section -->
-    <!-- <section class="pricing" id="pricing">
-        <div class="container">
-            <div class="section-title">
-                <h3>Pricing</h3>
-                <p>Affordable solutions for palliative care management</p>
-            </div>
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <h4>Special Offer</h4>
-                    <div class="price">₹45,999 INR</div>
-                    <p>For first 15 palliative care providers</p>
-                    <ul>
-                        <li>Complete application</li>
-                        <li>Database included if needed</li>
-                        <li>Priority implementation</li>
-                    </ul>
-                </div>
-                <div class="pricing-card">
-                    <h4>Standard Pricing</h4>
-                    <div class="price">₹52,898.85 INR</div>
-                    <p>Regular pricing after initial offer</p>
-                    <ul>
-                        <li>Complete application</li>
-                        <li>Database included if needed</li>
-                        <li>Full support package</li>
-                    </ul>
-                </div>
-                <div class="pricing-card">
-                    <h4>Database Setup</h4>
-                    <div class="price">₹15,000 INR</div>
-                    <p>Firebase Blaze Plan Deposit</p>
-                    <ul>
-                        <li>Initial deposit for Firebase services</li>
-                        <li>Pay-as-you-go model</li>
-                        <li>Credit remains valid until used</li>
-                    </ul>
-                    <p><small>Note: Higher deposits may be required for larger projects</small></p>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
-    <!-- Collaboration Section -->
-    <section class="collaboration" id="collaborate">
-        <div class="container">
-            <div class="section-title">
-                <h3>Contact Us</h3>
-                <p>Get in touch to learn more about our palliative care solution</p>
-            </div>
-            <div class="collaboration-content">
-                <div class="contact-card">
-                    <h4>Contact Details</h4>
-                    <div class="contact-details">
-                        <p><i class="fas fa-phone"></i> Phone: 8089124307</p>
-                        <p><i class="fas fa-envelope"></i> Email: hello@neuraq.in</p>
-                        <p><i class="fas fa-calendar-alt"></i> Detailed Demo: 8157980307</p>
+        <!-- About Start -->
+        <div class="container-xxl py-5" id="about">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <h5 class="text-primary-gradient fw-medium">About App</h5>
+                        <h1 class="mb-4">What is Neu-Palliative App?</h1>
+                        <p class="mb-4">Neu-Palliative is a smart mobile application developed by Neuraq Technologies to streamline and digitize the daily operations of palliative care centers. Designed with both caregivers and patients in mind, the app simplifies routine tasks and ensures seamless communication, helping field nurses, volunteers, and administrators manage their responsibilities more efficiently and compassionately.  </p>
+                        <div class="row g-4 mb-4">
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="d-flex">
+                                    <i class="fa fa-cogs fa-2x text-primary-gradient flex-shrink-0 mt-1"></i>
+                                    <div class="ms-3">
+                                        <h2 class="mb-0" data-toggle="counter-up">17</h2>
+                                        <p class="text-primary-gradient mb-0">Active Clinics</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                                <div class="d-flex">
+                                    <i class="fa fa-comments fa-2x text-secondary-gradient flex-shrink-0 mt-1"></i>
+                                    <div class="ms-3">
+                                        <h2 class="mb-0" data-toggle="counter-up">178</h2>
+                                        <p class="text-secondary-gradient mb-0">Clients Reviews</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill mt-3">Read More</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid wow fadeInUp" data-wow-delay="0.5s" src="ptv-demo/img/about.png">
                     </div>
                 </div>
-                <div class="contact-card">
-                    <h4>Implementation Support</h4>
-                    <p>Our team is ready to help you implement Neuraq's palliative care solution in your organization.</p>
-                    <p>Contact us for customized demonstrations and implementation planning.</p>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+<!-- Features Start -->
+<div class="container-xxl py-5" id="feature">
+    <div class="container py-5 px-lg-5">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="text-primary-gradient fw-medium">App Features</h5>
+            <h1 class="mb-5">Awesome Features</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-eye text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Catheter Scheduling</h5>
+                    <p class="m-0">Schedule catheter changes efficiently to ensure timely and proper care for patients without the risk of delays.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-layer-group text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Homecare Scheduling</h5>
+                    <p class="m-0">Manage and assign nurse home visits easily to provide continuous support and care to patients at home.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-edit text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Add New Cases Easily</h5>
+                    <p class="m-0">Quickly register new patients with minimal data entry and start providing care immediately.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-shield-alt text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Medicines Management</h5>
+                    <p class="m-0">Maintain a digital log of all prescribed medicines and track changes or updates efficiently.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-cloud text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Pause/Hide Medicines</h5>
+                    <p class="m-0">Temporarily deactivate or hide medicines from the list without deleting them to retain treatment history.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-mobile-alt text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Reports</h5>
+                    <p class="m-0">Generate various types of reports including social, equipment, and death reports with filtering options.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-chart-line text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Progress Report (Audit)</h5>
+                    <p class="m-0">Audit patient recovery and nurse performance with clear, real-time progress tracking and reporting tools.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-user-nurse text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Homecares</h5>
+                    <p class="m-0">Categorize homecare visits including doctor, nurse, emergency, and volunteer types for better coordination.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-heart-broken text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Death Reports</h5>
+                    <p class="m-0">Maintain official and detailed death reports including time, cause, and follow-up protocols.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-filter text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Filters and Sort Reports</h5>
+                    <p class="m-0">Search and filter reports by activity status, diagnosis, and timeframe like monthly or yearly.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-toggle-on text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Auto & Manual Deactivation</h5>
+                    <p class="m-0">Automatically or manually deactivate users or entries based on predefined rules or admin actions.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-lock text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Secure PIN for Deleting Records</h5>
+                    <p class="m-0">Enable an additional layer of security by requiring a PIN before any sensitive record deletion.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-print text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Print, Download, Share Reports</h5>
+                    <p class="m-0">Easily print, download, or share reports in a few clicks for better communication and offline access.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-search text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Easy to Search Patient</h5>
+                    <p class="m-0">Search patients by name, ID, phone, diagnosis, or any other critical medical attribute instantly.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-list text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Search by All Details</h5>
+                    <p class="m-0">Enable comprehensive search filters across the full patient profile and medical logs for quick data access.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-calendar-alt text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Easy to Get Monthly Reports</h5>
+                    <p class="m-0">Generate automated monthly reports categorized by patient, diagnosis, activity, or department.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-cogs text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Easy to Customize the App</h5>
+                    <p class="m-0">Modify layouts, features, and access settings to suit different palliative care organizations or workflows.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <i class="fa fa-sync-alt text-white fs-4"></i>
+                    </div>
+                    <h5 class="mb-3">Updates Option for All</h5>
+                    <p class="m-0">Push real-time updates across all devices and user accounts to ensure everyone sees the latest information.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+<!-- Features End -->
 
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+
+
+        <!-- Screenshot Start -->
+        <div class="container-xxl py-5">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+                        <h5 class="text-primary-gradient fw-medium">Bystander Interface</h5>
+                        <h1 class="mb-4">User-Friendly Interface Designed for Patients and Caregivers</h1>
+                        <p class="mb-4">The Neu-Palliative App ensures patients and their caregivers can access vital information quickly and easily through a seamless, intuitive interface. It supports healthcare by providing smart tools for medication tracking, nurse requests, and donations.</p>
+                        <p><i class="fa fa-check text-primary-gradient me-3"></i>Access to patient health summary and medication records</p>
+                        <p><i class="fa fa-check text-primary-gradient me-3"></i>AI Chatbot assistance for common queries and support</p>
+                        <p><i class="fa fa-check text-primary-gradient me-3"></i>Call nurse, ambulance, or office with one tap</p>
+                        <p><i class="fa fa-check text-primary-gradient me-3"></i>Download patient reports and share when needed</p>
+                        <p><i class="fa fa-check text-primary-gradient me-3"></i>Make donations easily to support palliative care services</p>
+                        <p><i class="fa fa-check text-primary-gradient me-3"></i>View medication schedule and reminders at a glance</p>
+                        <a href="#" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill mt-3">Read More</a>
+                    </div>
+                    <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="owl-carousel screenshot-carousel">
+                            <img class="img-fluid" src="ptv-demo/img/screenshot-1.jpg" alt="App Screenshot 1">
+                            <img class="img-fluid" src="ptv-demo/img/screenshot-2.jpg" alt="App Screenshot 2">
+                            <img class="img-fluid" src="ptv-demo/img/screenshot-3.jpg" alt="App Screenshot 3">
+                            <img class="img-fluid" src="ptv-demo/img/screenshot-4.jpg" alt="App Screenshot 4">
+                            <img class="img-fluid" src="ptv-demo/img/screenshot-5.jpg" alt="App Screenshot 5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screenshot End -->
+
+
+        <!-- Process Start -->
+        <div class="container-xxl py-5">
+            <div class="container py-5 px-lg-5">
+                <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="text-primary-gradient fw-medium">How to Get the App</h5>
+                    <h1 class="mb-5">3 Easy Steps</h1>
+                </div>
+                <div class="row gy-5 gx-4 justify-content-center">
+                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                                <i class="fa fa-desktop fa-3x text-white"></i>
+                            </div>
+                            <h5 class="mt-4 mb-3">1. Request a Demo</h5>
+                            <p class="mb-0">Contact our team to schedule a demo and experience how the Neu-Palliative App works in real time.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                                <i class="fa fa-user-graduate fa-3x text-white"></i>
+                            </div>
+                            <h5 class="mt-4 mb-3">2. Attend Training</h5>
+                            <p class="mb-0">Get 1-day training for all users including nurses and staff to ensure smooth adoption and usage.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                                <i class="fa fa-credit-card fa-3x text-white"></i>
+                            </div>
+                            <h5 class="mt-4 mb-3">3. Purchase the App</h5>
+                            <p class="mb-0">Choose the package and complete the purchase to get full access. Special pricing available for first 15 centers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Process Start -->
+
+
+<!-- Download Start -->
+<div class="container-xxl py-5">
+    <div class="container py-5 px-lg-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <img class="img-fluid wow fadeInUp" data-wow-delay="0.1s" src="ptv-demo/img/about.png" alt="Download App">
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <h5 class="text-primary-gradient fw-medium">Download</h5>
+                <h1 class="mb-4">Get The Neu-Palliative App</h1>
+                <p class="mb-4">To ensure secure deployment and proper onboarding, the app is available via our dedicated supervisor. Please contact us directly to get the installation link, credentials, and guidance for your team.</p>
+                <div class="row g-4">
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                        <a href="tel:+91815980307" class="d-flex bg-primary-gradient rounded py-3 px-4">
+                            <i class="fa fa-user-shield fa-3x text-white flex-shrink-0"></i>
+                            <div class="ms-3">
+                                <p class="text-white mb-0">Connect With</p>
+                                <h5 class="text-white mb-0">Supervisor</h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                        <a href="mailto:hello@neuraq.in" class="d-flex bg-secondary-gradient rounded py-3 px-4">
+                            <i class="fa fa-envelope fa-3x text-white flex-shrink-0"></i>
+                            <div class="ms-3">
+                                <p class="text-white mb-0">Email Us At</p>
+                                <h6 class="text-white mb-0">hello@neuraq.in</h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <p class="mt-4"><i class="fa fa-info-circle text-primary-gradient me-2"></i>Note: Direct download links are shared after demo/training confirmation for authorized use.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Download End -->
+
+
+
+<!-- Pricing Start -->
+<div class="container-xxl py-5" id="pricing">
+    <div class="container py-5 px-lg-5">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="text-primary-gradient fw-medium">Pricing Plan</h5>
+            <h1 class="mb-5">Choose Your Plan</h1>
+        </div>
+        <div class="tab-class text-center pricing wow fadeInUp" data-wow-delay="0.1s">
+            <ul class="nav nav-pills d-inline-flex justify-content-center bg-primary-gradient rounded-pill mb-5">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="pill" href="#tab-1">Monthly</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="pill" href="#tab-2">Yearly</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="pill" href="#tab-3">Lifetime</button>
+                </li>
+            </ul>
+            <div class="tab-content text-start">
+                <!-- Monthly -->
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="bg-light rounded">
+                                <div class="border-bottom p-4 mb-4">
+                                    <h4 class="text-primary-gradient mb-1">Basic Plan</h4>
+                                    <span>All features except customization</span>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <h1 class="mb-3">₹999<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Month</small></h1>
+                                    <div class="d-flex justify-content-between mb-3"><span>Full App Features</span><i class="fa fa-check text-primary-gradient pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Free Updates</span><i class="fa fa-check text-primary-gradient pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Standard Support</span><i class="fa fa-check text-primary-gradient pt-1"></i></div>
+                                    <a href="#" class="btn btn-primary-gradient rounded-pill py-2 px-4 mt-4">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="bg-light rounded border">
+                                <div class="border-bottom p-4 mb-4">
+                                    <h4 class="text-primary-gradient mb-1">Pro Plan</h4>
+                                    <span>All features + customization</span>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <h1 class="mb-3">₹1399<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Month</small></h1>
+                                    <div class="d-flex justify-content-between mb-3"><span>All App Features</span><i class="fa fa-check text-primary-gradient pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Customization Support</span><i class="fa fa-check text-primary-gradient pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Priority Support</span><i class="fa fa-check text-primary-gradient pt-1"></i></div>
+                                    <a href="#" class="btn btn-secondary-gradient rounded-pill py-2 px-4 mt-4">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yearly -->
+                <div id="tab-2" class="tab-pane fade p-0">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="bg-light rounded">
+                                <div class="border-bottom p-4 mb-4">
+                                    <h4 class="text-primary-gradient mb-1">Yearly Basic</h4>
+                                    <span>All features without customization</span>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <h1 class="mb-3">₹11,599<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Year</small></h1>
+                                    <div class="d-flex justify-content-between mb-3"><span>All App Features</span><i class="fa fa-check text-primary-gradient pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Email Support</span><i class="fa fa-check text-primary-gradient pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Yearly Updates</span><i class="fa fa-check text-primary-gradient pt-1"></i></div>
+                                    <a href="#" class="btn btn-primary-gradient rounded-pill py-2 px-4 mt-4">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="bg-light rounded border">
+                                <div class="border-bottom p-4 mb-4">
+                                    <h4 class="text-primary-gradient mb-1">Yearly Premium</h4>
+                                    <span>All features + customization</span>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <h1 class="mb-3">₹17,999<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Year</small></h1>
+                                    <div class="d-flex justify-content-between mb-3"><span>Full Access + Customization</span><i class="fa fa-check text-primary-gradient pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Premium Support</span><i class="fa fa-check text-primary-gradient pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-3"><span>App Update Assistance</span><i class="fa fa-check text-primary-gradient pt-1"></i></div>
+                                    <a href="#" class="btn btn-secondary-gradient rounded-pill py-2 px-4 mt-4">Get Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lifetime -->
+                <div id="tab-3" class="tab-pane fade p-0">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="bg-light rounded border border-success">
+                                <div class="border-bottom p-4 mb-4">
+                                    <h4 class="text-success mb-1">Lifetime Access</h4>
+                                    <span>All features + support forever</span>
+                                </div>
+                                <div class="p-4 pt-0">
+                                    <h1 class="mb-3">₹49,999<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ One-Time</small></h1>
+                                    <div class="d-flex justify-content-between mb-3"><span>All Features Included</span><i class="fa fa-check text-success pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Customization Support</span><i class="fa fa-check text-success pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-3"><span>Lifetime Updates & Support</span><i class="fa fa-check text-success pt-1"></i></div>
+                                    <a href="#" class="btn btn-success rounded-pill py-2 px-4 mt-4">Contact to Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Lifetime -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pricing End -->
+
+
+
+       <!-- Testimonial Start -->
+<div class="container-xxl py-5" id="review">
+    <div class="container py-5 px-lg-5">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="text-primary-gradient fw-medium">Testimonial</h5>
+            <h1 class="mb-5">What Say Our Clients!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+
+            <!-- Secretary: John -->
+            <!-- <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="ptv-demo/img/testimonial-1.jpg" style="width: 85px; height: 85px;" alt="John">
+                    <div class="ms-4">
+                        <h5 class="mb-1">John</h5>
+                        <p class="mb-1">Secretary, Makkaraparamba Palliative</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">The Neu-Palliative app has transformed how we manage patients. It's fast, organized, and has eliminated paperwork entirely. Excellent support too.</p>
+            </div> -->
+
+            <!-- Nurse Shameema -->
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="ptv-demo/img/testimonial-1.jpg" style="width: 85px; height: 85px;" alt="Shameema">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Shameema</h5>
+                        <p class="mb-1">Palliative Nurse</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Managing medicines and scheduling visits has become so easy. No confusion, no stress. We love using it daily.</p>
+            </div>
+
+            <!-- Nurse Haseena -->
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="ptv-demo/img/testimonial-1.jpg" style="width: 85px; height: 85px;" alt="Haseena">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Haseena</h5>
+                        <p class="mb-1">Palliative Nurse</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Even during emergency care, we can instantly pull up patient history. It saves lives and effort.</p>
+            </div>
+
+            <!-- Nurse Divya -->
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="ptv-demo/img/testimonial-1.jpg" style="width: 85px; height: 85px;" alt="Divya">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Divya</h5>
+                        <p class="mb-1">Palliative Nurse</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">From printing reports to tracking patient progress, everything is available with a tap. Great design and very reliable.</p>
+            </div>
+
+            <!-- Nurse Parvathi -->
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="ptv-demo/img/testimonial-1.jpg" style="width: 85px; height: 85px;" alt="Parvathi">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Parvatha</h5>
+                        <p class="mb-1">Palliative Nurse</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">This app helps us stay focused on patient care instead of paperwork. It’s a blessing for our team.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+
+
+        <!-- Contact Start -->
+        <!-- <div class="container-xxl py-5" id="contact">
+            <div class="container py-5 px-lg-5">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="text-primary-gradient fw-medium">Contact Us</h5>
+                    <h1 class="mb-5">Get In Touch!</h1>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="wow fadeInUp" data-wow-delay="0.3s">
+                            <p class="text-center mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                            <label for="name">Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <label for="email">Your Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                            <label for="subject">Subject</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                            <label for="message">Message</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button class="btn btn-primary-gradient rounded-pill py-3 px-5" type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Contact End -->
+        
+<!-- Contact Start -->
+<div class="container-xxl py-5" id="contact">
+    <div class="container py-5 px-lg-5">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="text-primary-gradient fw-medium">Contact Us</h5>
+            <h1 class="mb-4">Get In Touch!</h1>
+            <p class="mb-5">Need a live demo or help with the app? Reach out to us using the options below.</p>
+        </div>
+        <div class="row g-4 justify-content-center text-center">
+
+            <!-- Book a Demo -->
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
+                <a href="#feature" class="btn btn-primary-gradient w-100 rounded-pill py-3 px-4">
+                    <i class="fa fa-calendar-check me-2"></i> Book a Demo
+                </a>
+            </div>
+
+            <!-- Contact Supervisor -->
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                <a href="tel:+918157980307" class="btn btn-secondary-gradient w-100 rounded-pill py-3 px-4">
+                    <i class="fa fa-user-shield me-2"></i> Contact Supervisor
+                </a>
+            </div>
+
+            <!-- Visit Website -->
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
+                <a href="https://neuraq.in" target="_blank" class="btn btn-primary-gradient w-100 rounded-pill py-3 px-4">
+                    <i class="fa fa-globe me-2"></i> Check Our Website
+                </a>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="d-flex justify-content-center align-items-center gap-3 mt-2">
+                    <a href="https://youtube.com/@neuraq" target="_blank" class="btn btn-outline-dark btn-sm rounded-circle">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://wa.me/918157980307" target="_blank" class="btn btn-outline-success btn-sm rounded-circle">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://instagram.com/neuraq" target="_blank" class="btn btn-outline-danger btn-sm rounded-circle">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <p class="mt-2 small text-muted">Follow us for tutorials & updates</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5 px-lg-5">
+        <div class="row g-5">
+            <!-- Address -->
+            <div class="col-md-6 col-lg-4">
+                <h4 class="text-white mb-4">Contact Info</h4>
+                <p><i class="fa fa-map-marker-alt me-3"></i>Makkaraparamba, Malappuram, Kerala</p>
+                <p><i class="fa fa-phone-alt me-3"></i>+91 81579 80307</p>
+                <p><i class="fa fa-envelope me-3"></i>hello@neuraq.in</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href="https://wa.me/918157980307" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/neuraq" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/neuraq" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@neuraq" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-6 col-lg-4">
+                <h4 class="text-white mb-4">Quick Links</h4>
+                <a class="btn btn-link" href="#about">About Us</a>
+                <a class="btn btn-link" href="#contact">Contact Us</a>
+                <a class="btn btn-link" href="#">Privacy Policy</a>
+                <a class="btn btn-link" href="#">Terms & Conditions</a>
+                <a class="btn btn-link" href="#pricing">Pricing</a>
+            </div>
+
+            <!-- Popular Links -->
+            <div class="col-md-6 col-lg-4">
+                <h4 class="text-white mb-4">Popular Features</h4>
+                <a class="btn btn-link" href="#feature">App Features</a>
+                <a class="btn btn-link" href="#review">Client Reviews</a>
+                <a class="btn btn-link" href="#download">App Download</a>
+                <a class="btn btn-link" href="#demo">Book a Demo</a>
+                <a class="btn btn-link" href="#contact">Support</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="container px-lg-5">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="https://neuraq.in">Neuraq Technologies</a>, All Rights Reserved. 
+                </div>
+                <!-- <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu">
+                        <a href="#">Home</a>
+                        <a href="#">Cookies</a>
+                        <a href="#faq">FAQs</a>
+                        <a href="#contact">Help</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up text-white"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="ptv-demo/lib/wow/wow.min.js"></script>
+    <script src="ptv-demo/lib/easing/easing.min.js"></script>
+    <script src="ptv-demo/lib/waypoints/waypoints.min.js"></script>
+    <script src="ptv-demo/lib/counterup/counterup.min.js"></script>
+    <script src="ptv-demo/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="ptv-demo/js/main.js"></script>
 </body>
+
 </html>
