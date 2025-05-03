@@ -3,13 +3,17 @@
 
 <head>
     <meta charset="utf-8">
-    <title>FitApp - Mobile App HTML Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+<title>Neuraq Palliative Care App | Empowering Compassionate Healthcare</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Meta Tags -->
+<meta name="keywords" content="Palliative Care App, Neuraq, Palliative Healthcare, Home Care, Kerala, Medical Support, End of Life Care, Neuraq Technologies">
+<meta name="description" content="Neuraq Palliative App is a compassionate digital solution designed to support palliative care services in Kerala. Easily connect patients, families, and healthcare professionals with a seamless and caring interface.">
+<meta name="author" content="Neuraq Technologies">
+<meta name="robots" content="index, follow">
 
     <!-- Favicon -->
-    <link href="ptv-demo/ptv-demo/img/favicon.ico" rel="icon">
+    <link rel="icon" href="/assets/images/NT LOGO PNG WHITE.png" type="image/png">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,6 +34,36 @@
     <!-- Template Stylesheet -->
     <link href="ptv-demo/css/style.css" rel="stylesheet">
 </head>
+<style>
+    /* Fix for white space on mobile */
+@media (max-width: 578px) {
+    body, 
+    .container-xxl, 
+    .container,
+    .navbar,
+    .hero-header {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
+    /* Ensure all containers don't create horizontal scroll */
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    /* Fix for carousel images */
+    .owl-carousel .img-fluid {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    /* Specifically target the hero section */
+    .container-xxl.position-relative.p-0 {
+      overflow: hidden;
+    }
+  }
+</style>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
     <div class="container-xxl bg-white p-0">
@@ -774,7 +808,7 @@
             <!-- Quick Links -->
             <div class="col-md-6 col-lg-4">
                 <h4 class="text-white mb-4">Quick Links</h4>
-                <a class="btn btn-link" href="#about">About Us</a>
+                <a class="btn btn-link" href="Pages/about-app.html">About Us</a>
                 <a class="btn btn-link" href="#contact">Contact Us</a>
                 <a class="btn btn-link" href="#">Privacy Policy</a>
                 <a class="btn btn-link" href="#">Terms & Conditions</a>
