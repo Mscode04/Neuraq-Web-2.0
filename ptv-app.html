@@ -32,13 +32,22 @@
     <link href="ptv-demo/css/bootstrap.min.css" rel="stylesheet">
 
 
-    
+
     <!-- Template Stylesheet -->
     <link href="ptv-demo/css/style.css" rel="stylesheet">
 </head>
 <style>
     /* Fix for white space on mobile */
 @media (max-width: 578px) {
+    body, 
+    .container-xxl, 
+    .container,
+    .navbar,
+    .hero-header {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+@media (max-width: 2000px) {
     body, 
     .container-xxl, 
     .container,
