@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Neuraq Palliative App - About</title>
+    <title>Neuraq Palliative App - Complete Solution</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Neuraq, Palliative Care, Kerala Health App, Caregiver Support, Patient App, Palliative Technology">
     <meta name="description" content="Neuraq is a digital solution for palliative care, connecting patients, caregivers, and volunteers through a single app platform.">
     <meta name="author" content="Neuraq Team">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #176B87;
             --secondary: #64CCC5;
+            --accent: #DAFFFB;
             --light: #f8f9fa;
             --dark: #212529;
-            --primary-gradient: linear-gradient(45deg, #176B87, #64CCC5);
+            --primary-gradient: linear-gradient(135deg, #176B87, #64CCC5);
+            --secondary-gradient: linear-gradient(135deg, #64CCC5, #DAFFFB);
         }
         .gradient-bg {
             background: var(--primary-gradient);
@@ -23,126 +26,814 @@
         .section-title {
             font-weight: bold;
             color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
         }
         .team-img {
-            width: 100%;
-            height: 300px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: 50%;
+            border: 5px solid var(--accent);
         }
         footer {
             background-color: var(--primary);
             color: white;
         }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        .problem-card {
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s;
+            height: 100%;
+        }
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .advantage-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: none;
+            height: 100%;
+        }
+        .advantage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .advantage-card .card-header {
+            background: var(--secondary-gradient);
+            color: var(--dark);
+            font-weight: bold;
+        }
+        .device-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin: 15px;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--accent);
+        }
+        .app-screenshot {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+        .app-screenshot:hover {
+            transform: scale(1.05);
+        }
+        .pricing-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .pricing-card .card-header {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 20px;
+        }
+        .pricing-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .database-architecture {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .database-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            background: var(--accent);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        .step-card {
+            background: var(--accent);
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s;
+        }
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .step-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .nav-pills .nav-link.active {
+            background: var(--primary-gradient);
+        }
+        .nav-pills .nav-link {
+            color: var(--primary);
+        }
     </style>
 </head>
 <body>
 
+<!-- Hero Section -->
+<section class="gradient-bg py-5 text-center">
+    <div class="container">
+        <img src="/ptv-demo/img/logo-main.png" alt="Neuraq Logo" class="mb-4" style="height: 80px;">
+        <h1 class="display-4 fw-bold text-white mb-3">Neu-Palliative-App</h1>
+        <p class="lead fs-4 text-white mb-4">REVOLUTIONIZING PALLIATIVE CARE THROUGH SMART HEALTHCARE SOLUTIONS</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="https://wa.me/918157980307" class="btn btn-light btn-lg px-4">Contact Us</a>
+            <a href="https://wa.me/918089124307" class="btn btn-outline-light btn-lg px-4">Request Demo</a>
+        </div>
+    </div>
+</section>
+
+<!-- Problem Statement Section -->
+<section class="container my-5 py-5">
+    <div class="text-center mb-5">
+        <h2 class="section-title d-inline-block">Problems We Solve</h2>
+        <p class="lead text-muted">Addressing critical challenges in palliative care management</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-3">
+            <div class="card h-100 problem-card p-3">
+                <div class="card-body text-center">
+                    <div class="feature-icon text-danger">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="h5">Inefficient Data Handling</h3>
+                    <p>Eliminating disorganized paper records with secure digital solutions.</p>
+                    <div class="progress mt-3" style="height: 8px;">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 problem-card p-3">
+                <div class="card-body text-center">
+                    <div class="feature-icon text-warning">
+                        <i class="fas fa-user-injured"></i>
+                    </div>
+                    <h3 class="h5">Tracking Patient Progress</h3>
+                    <p>Real-time updates on patient conditions and care activities.</p>
+                    <div class="progress mt-3" style="height: 8px;">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 problem-card p-3">
+                <div class="card-body text-center">
+                    <div class="feature-icon text-info">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3 class="h5">Manual Entry Burden</h3>
+                    <p>Reducing time-consuming paperwork with automated systems.</p>
+                    <div class="progress mt-3" style="height: 8px;">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card h-100 problem-card p-3">
+                <div class="card-body text-center">
+                    <div class="feature-icon text-success">
+                        <i class="fas fa-people-arrows"></i>
+                    </div>
+                    <h3 class="h5">Limited Coordination</h3>
+                    <p>Improving communication between caregivers, nurses, and doctors.</p>
+                    <div class="progress mt-3" style="height: 8px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- About Section -->
-<section class="container my-5">
-    <h2 class="section-title mb-4">About Neuraq</h2>
-    <p>Neuraq Palliative App is a compassionate mobile solution created to support patients facing life-limiting conditions. It connects volunteers, doctors, and family members with real-time updates, visit tracking, medicine reminders, and more.</p>
-    <p>Built in the heart of Makkaraparamba, the app was inspired by local community challenges in palliative care. Our goal is to bridge the gap between patients and palliative support using technology.</p>
+<section class="container my-5 py-5">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <h2 class="section-title mb-4">About Neuraq</h2>
+            <p class="lead">Compassionate mobile solution for palliative care patients and caregivers.</p>
+            <p>Neuraq Palliative App connects volunteers, doctors, and family members with real-time updates, visit tracking, medicine reminders, and more.</p>
+            <p>Built in the heart of Makkaraparamba, the app was inspired by local community challenges in palliative care. Our goal is to bridge the gap between patients and palliative support using technology.</p>
+            <div class="d-flex align-items-center mt-4">
+                <div class="me-4">
+                    <h3 class="text-primary mb-0">3+</h3>
+                    <p class="text-muted mb-0">Months Active</p>
+                </div>
+                <div class="me-4">
+                    <h3 class="text-primary mb-0">100+</h3>
+                    <p class="text-muted mb-0">Patients</p>
+                </div>
+                <div>
+                    <h3 class="text-primary mb-0">100%</h3>
+                    <p class="text-muted mb-0">Paperless</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="/ptv-demo/img/about-page-1.jpg" alt="App" Interface" class="img-fluid rounded-3 shadow app-screenshot">
+        </div>
+    </div>
 </section>
 
-<!-- Story Section -->
-<section class="container my-5">
-    <h2 class="section-title mb-4">Story of the App</h2>
-    <p>During local home care visits, our team realized a common problem: unorganized communication, paper-based records, and lack of timely updates. From this challenge, Neuraq was born.</p>
-    <p>We started with a prototype tested among a few families. Over time, with feedback from palliative volunteers and doctors, the app evolved into a robust system designed to deliver care with dignity and speed.</p>
+<!-- Advantages Section -->
+<section class="container my-5 py-5">
+    <div class="text-center mb-5">
+        <h2 class="section-title d-inline-block">Key Advantages</h2>
+        <p class="lead text-muted">Why our solution stands out in palliative care management</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card advantage-card h-100">
+                <div class="card-header text-center">
+                    <i class="fas fa-calendar-check feature-icon"></i>
+                    <h3>Efficient Scheduling</h3>
+                </div>
+                <div class="card-body">
+                    <p>Automated scheduling for catheter changes and home visits with intelligent reminders and notifications.</p>
+                    <div class="text-center">
+                        <!-- <img src="https://via.placeholder.com/300x200?text=Scheduling+UI" alt="Scheduling Interface" class="img-fluid rounded mt-3"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card advantage-card h-100">
+                <div class="card-header text-center">
+                    <i class="fas fa-clock feature-icon"></i>
+                    <h3>Time Savings</h3>
+                </div>
+                <div class="card-body">
+                    <p>Eliminates manual paper entries with digital records that save up to 70% of administrative time.</p>
+                    <div class="text-center mt-3">
+                        <!-- <div class="progress" style="height: 20px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70% Time Saved</div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card advantage-card h-100">
+                <div class="card-header text-center">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h3>Improved Visibility</h3>
+                </div>
+                <div class="card-body">
+                    <p>Admins gain clear insights into nurse activity logs with comprehensive dashboards and reporting.</p>
+                    <div class="text-center">
+                        <!-- <img src="https://via.placeholder.com/300x150?text=Dashboard+View" alt="Dashboard View" class="img-fluid rounded mt-3"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card advantage-card h-100">
+                <div class="card-header text-center">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h3>Real-time Access</h3>
+                </div>
+                <div class="card-body">
+                    <p>Instant digital patient records and reports accessible from any authorized device.</p>
+                    <!-- <div class="d-flex justify-content-center mt-3">
+                        <i class="fas fa-mobile-alt device-icon"></i>
+                        <i class="fas fa-tablet-alt device-icon"></i>
+                        <i class="fas fa-laptop device-icon"></i>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card advantage-card h-100">
+                <div class="card-header text-center">
+                    <i class="fas fa-heart feature-icon"></i>
+                    <h3>User-Friendly</h3>
+                </div>
+                <div class="card-body">
+                    <p>Simple interface designed specifically for patients and caregivers with minimal technical skills.</p>
+                    <div class="text-center">
+                        <!-- <img src="https://via.placeholder.com/300x150?text=Simple+UI" alt="User Friendly Interface" class="img-fluid rounded mt-3"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card advantage-card h-100">
+                <div class="card-header text-center">
+                    <i class="fas fa-hand-holding-heart feature-icon"></i>
+                    <h3>Donation Gateway</h3>
+                </div>
+                <div class="card-body">
+                    <p>Support NGO initiatives directly through the app with secure payment processing.</p>
+                    <div class="text-center mt-3">
+                        <!-- <img src="https://via.placeholder.com/200x100?text=Donation+UI" alt="Donation Interface" class="img-fluid rounded"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Mission & Vision -->
-<section class="container my-5">
+<!-- Features Section -->
+<section class="container my-5 py-5">
+    <div class="text-center mb-5">
+        <h2 class="section-title d-inline-block">App Features</h2>
+        <p class="lead text-muted">Comprehensive tools for palliative care management</p>
+    </div>
+
+    <ul class="nav nav-pills mb-5 justify-content-center" id="features-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="nurse-tab" data-bs-toggle="pill" data-bs-target="#nurse-features" type="button" role="tab">Nurse Interface</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="user-tab" data-bs-toggle="pill" data-bs-target="#user-features" type="button" role="tab">User Features</button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="features-tabContent">
+        <!-- Nurse + Doctor Features Combined -->
+        <div class="tab-pane fade show active" id="nurse-features" role="tabpanel">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/ptv-demo/img/about-page-1.jpg" alt="Nurse Interface" class="img-fluid rounded shadow app-screenshot">
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <!-- Nurse Features -->
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-procedures feature-icon"></i>
+                                    <h5>Catheter Scheduling</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-home feature-icon"></i>
+                                    <h5>Homecare Scheduling</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-folder-plus feature-icon"></i>
+                                    <h5>Add New Cases</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-file-alt feature-icon"></i>
+                                    <h5>Social Reports</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-pills feature-icon"></i>
+                                    <h5>Medicine Management</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-x-ray feature-icon"></i>
+                                    <h5>Equipment Reports</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Former Doctor Features -->
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-ambulance feature-icon"></i>
+                                    <h5>Emergency Homecare</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-print feature-icon"></i>
+                                    <h5>Print/Download Reports</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-file-medical feature-icon"></i>
+                                    <h5>Death Reports</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-lock feature-icon"></i>
+                                    <h5>Secure PIN Protection</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-user-md feature-icon"></i>
+                                    <h5>Case Management</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-notes-medical feature-icon"></i>
+                                    <h5>Prescription Panel</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-calendar-check feature-icon"></i>
+                                    <h5>Visit Scheduling</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-user-lock feature-icon"></i>
+                                    <h5>Doctor Login Panel</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Features -->
+        <div class="tab-pane fade" id="user-features" role="tabpanel">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="/ptv-demo/img/about-page-2.jpg" alt="User Interface" class="img-fluid rounded shadow app-screenshot">
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-robot feature-icon"></i>
+                                    <h5>AI Chatbot</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-phone-alt feature-icon"></i>
+                                    <h5>Call Nurse/Ambulance</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-file-download feature-icon"></i>
+                                    <h5>Download Reports</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <div class="card h-100 shadow-sm text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-pills feature-icon"></i>
+                                    <h5>Medication Details</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Database Section -->
+<!-- <section class="container my-5 py-5">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <h2 class="section-title mb-4">Secure Database Architecture</h2>
+            <p class="lead">Built on Google Firebase for reliability and security</p>
+            
+            <div class="d-flex align-items-start mb-4">
+                <div class="database-icon me-3">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div>
+                    <h5>Security Features</h5>
+                    <ul>
+                        <li>Encrypted data storage</li>
+                        <li>Real-time syncing</li>
+                        <li>Role-based access control</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="d-flex align-items-start">
+                <div class="database-icon me-3">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div>
+                    <h5>Key Advantages</h5>
+                    <ul>
+                        <li>Low-cost and scalable solution</li>
+                        <li>Reliable performance</li>
+                        <li>Seamless mobile integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="database-architecture p-4">
+                <div class="text-center mb-4">
+                    <h4>System Architecture</h4>
+                </div>
+                <div class="text-center">
+                    <div class="d-flex justify-content-center mb-3">
+                        <div class="text-center mx-4">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width: 80px; height: 80px;">
+                                <i class="fas fa-user-nurse fa-2x"></i>
+                            </div>
+                            <p class="mt-2 mb-0 fw-bold">Nurse (Admin)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-center mb-3">
+                        <div class="bg-secondary text-white rounded p-3 mx-auto" style="max-width: 300px;">
+                            <i class="fas fa-database me-2"></i> Google Firebase Server
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-center">
+                        <div class="text-center mx-4">
+                            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width: 80px; height: 80px;">
+                                <i class="fas fa-user fa-2x"></i>
+                            </div>
+                            <p class="mt-2 mb-0 fw-bold">Patient (User)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- Success Stories -->
+<!-- <section class="container my-5 py-5">
+    <div class="text-center mb-5">
+        <h2 class="section-title d-inline-block">Real-world Success</h2>
+        <p class="lead text-muted">Proven results from Makkaraparamba Palliative deployment</p>
+    </div>
+    
     <div class="row">
         <div class="col-md-6">
-            <h3 class="section-title">Our Mission</h3>
-            <p>To empower caregivers and patients through technology that makes palliative care more organized, compassionate, and connected.</p>
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h5>Before Implementation</h5>
+                            <ul>
+                                <li>Paper-based records</li>
+                                <li>Manual scheduling</li>
+                                <li>Delayed updates</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <h5>After Implementation</h5>
+                            <ul>
+                                <li>100% digital records</li>
+                                <li>Automated scheduling</li>
+                                <li>Real-time updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
-            <h3 class="section-title">Our Vision</h3>
-            <p>A future where every person in need of end-of-life care is supported through community-driven digital tools, no matter where they live.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Features -->
-<section class="container my-5">
-    <h2 class="section-title mb-4">App Features</h2>
-    <ul>
-        <li>Volunteer visit tracking</li>
-        <li>Emergency contact alerts</li>
-        <li>Medication reminders</li>
-        <li>Caregiver communication</li>
-        <li>Doctor & health worker updates</li>
-    </ul>
-</section>
-
-<!-- Plans Section -->
-<!-- <section class="container my-5">
-    <h2 class="section-title mb-4">Plans</h2>
-    <div class="row text-center">
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
+            <div class="card shadow-sm h-100">
                 <div class="card-body">
-                    <h5 class="card-title">Free Plan</h5>
-                    <p>Basic features for local palliative care groups.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Community Plan</h5>
-                    <p>Customized dashboard for NGOs and community centers.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Enterprise Plan</h5>
-                    <p>Full integration for hospitals and large palliative teams.</p>
+                    <h4 class="text-center mb-4">Key Metrics</h4>
+                    <div class="row text-center">
+                        <div class="col-4">
+                            <div class="display-4 text-primary">3+</div>
+                            <p>Months Active</p>
+                        </div>
+                        <div class="col-4">
+                            <div class="display-4 text-primary">100%</div>
+                            <p>Paperless</p>
+                        </div>
+                        <div class="col-4">
+                            <div class="display-4 text-primary">100+</div>
+                            <p>Patients</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <img src="https://via.placeholder.com/400x200?text=Positive+Feedback" alt="Positive Feedback" class="img-fluid rounded">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section> -->
+
+<!-- Pricing Section -->
+<section class="container my-5 py-5" id="demo">
+    <div class="text-center mb-5">
+        <h2 class="section-title d-inline-block">Pricing Plans</h2>
+        <p class="lead text-muted">Affordable solutions for palliative care organizations</p>
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-5 mb-4">
+            <div class="card pricing-card h-100">
+                <div class="card-header text-center">
+                    <h3 class="text-white mb-0">Special Offer</h3>
+                </div>
+                <div class="card-body text-center">
+                    <div class="price mb-3">45,999 INR</div>
+                    <p class="text-muted">For first 15 palliative care units</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Full feature access</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 1-day training</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Database included</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Priority support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary btn-lg w-100">Get Started</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 mb-4">
+            <div class="card pricing-card h-100">
+                <div class="card-header text-center">
+                    <h3 class="text-white mb-0">Standard Plan</h3>
+                </div>
+                <div class="card-body text-center">
+                    <div class="price mb-3">59,999 INR</div>
+                    <p class="text-muted">Regular pricing</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Full feature access</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 1-day training</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Database optional</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Standard support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline-primary btn-lg w-100">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Getting Started -->
+<section class="container my-5 py-5">
+    <div class="text-center mb-5">
+        <h2 class="section-title d-inline-block">How to Get Started</h2>
+        <p class="lead text-muted">Simple steps to implement our solution</p>
+    </div>
+    
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Demo</h3>
+                <p>See how the app works with a live demonstration tailored to your needs.</p>
+                <div class="mt-3">
+                    <i class="fas fa-desktop fa-3x text-primary"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Training</h3>
+                <p>1-day comprehensive training session for all users in your organization.</p>
+                <div class="mt-3">
+                    <i class="fas fa-chalkboard-teacher fa-3x text-primary"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Purchase</h3>
+                <p>Complete the purchase and we'll handle implementation and setup.</p>
+                <div class="mt-3">
+                    <i class="fas fa-rocket fa-3x text-primary"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Team Section -->
-<!-- <section class="container my-5">
-    <h2 class="section-title mb-4">Our Team</h2>
-    <div class="row text-center">
-        <div class="col-md-4">
-            <img src="/assets/images/course-01.jpg" alt="Team Member" class="team-img mb-3">
-            <h5>Mohammed Shaheen KP</h5>
-            <p>Project Lead, Developer</p>
+<!-- <section class="container my-5 py-5">
+    <div class="text-center mb-5">
+        <h2 class="section-title d-inline-block">Our Team</h2>
+        <p class="lead text-muted">The people behind Neuraq Technologies</p>
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <img src="https://via.placeholder.com/150?text=Mohammed" alt="Mohammed Shaheen" class="team-img mb-3">
+                    <h5>Mohammed Shaheen</h5>
+                    <p class="text-muted">Developer</p>
+                    <p class="text-muted">+91 81579 80307</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-            <img src="/assets/images/course-01.jpg" alt="Team Member" class="team-img mb-3">
-            <h5>Fahim</h5>
-            <p>Technical Support</p>
-        </div>
-        <div class="col-md-4">
-            <img src="/assets/images/course-01.jpg" alt="Team Member" class="team-img mb-3">
-            <h5>Community Volunteer</h5>
-            <p>Palliative Care Coordinator</p>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <img src="https://via.placeholder.com/150?text=Nafeesa" alt="Nafeesa Rushdha" class="team-img mb-3">
+                    <h5>Nafeesa Rushdha</h5>
+                    <p class="text-muted">UI/UX Designer</p>
+                </div>
+            </div>
         </div>
     </div>
 </section> -->
 
-<!-- Contact Section -->
-<section class="container my-5">
-    <h2 class="section-title mb-4">Contact Us</h2>
-    <p>Email: hello@neuraq.org</p>
-    <p>Phone: +91 81579 80307</p>
-    <p>Location: Makkaraparamba, Kerala, India</p>
-</section>
-
-<!-- Footer -->
-<footer class="text-center py-4">
-    <p>&copy; 2025 Neuraq Technologies. All rights reserved.</p>
-</footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
