@@ -306,6 +306,265 @@
     </div>
   </div>
   
+<!-- Blog Section -->
+<section class="blog-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Latest Articles</h2>
+      <p class="section-subtitle">Insights, stories and ideas from our team</p>
+      <a href="blog.html" class="view-all">View All Posts →</a>
+    </div>
+
+    <div class="blog-grid">
+      <!-- Featured Blog Post -->
+      <article class="blog-card featured">
+        <div class="post-media">
+          <img src="assets/images/news-papper.jpg" alt="Featured post image" class="post-image">
+          <!-- <span class="post-category">Technology</span> -->
+        </div>
+        <div class="post-content">
+          <div class="post-meta">
+            <span class="post-date">May 18, 2025</span>
+            <!-- <span class="post-readtime">5 min read</span> -->
+          </div>
+          <h3 class="post-title"><a href="single-post-1.html">Neuraq Technologies Launches Mobile App for Palliative Care</a></h3>
+          <p class="post-excerpt">Malappuram – Neuraq Technologies has launched a mobile application aimed at enhancing palliative care by streamlining patient management and reducing the workload of healthcare workers. The app helps doctors and nurses spend more time with patients by simplifying tracking and communication processes.
+
+The application was officially launched during the "Arike" patient gathering organized by Makkaraparamba Palliative, in the presence of Dr. P. Unni. The launch was conducted by Muhammad Musthafa Tharayil, MD of Tharayil Business Group.</p>
+          <a href="single-post-1.html" class="read-more">Continue Reading</a>
+        </div>
+      </article>
+
+      <!-- Regular Blog Posts -->
+      <article class="blog-card">
+        <div class="post-media">
+          <img src="assets/images/blog-big-1.jpg" alt="Blog post image" class="post-image">
+          <span class="post-category">Health Tech</span>
+        </div>
+        <div class="post-content">
+          <div class="post-meta">
+            <span class="post-date">May 18, 2025</span>
+            <!-- <span class="post-readtime">4 min read</span> -->
+          </div>
+          <h3 class="post-title"><a href="single-post-1.html">Makkaraparamba Palliative Honors Neuraq Developers with Memento</a></h3>
+          <p class="post-excerpt">Malappuram, Kerala – As a token of appreciation for their technological contribution to healthcare, the developer team behind Neuraq Technologies' newly launched palliative care mobile app was honored with a memento by Makkaraparamba Palliative during the recent "അരികെ" patient meet.</p>
+          <a href="single-post-1.html" class="read-more">Read Article</a>
+        </div>
+      </article>
+
+      <!-- <article class="blog-card">
+        <div class="post-media">
+          <img src="assets/images/neuai-hero.jpg" alt="Blog post image" class="post-image">
+          <span class="post-category">Case Study</span>
+        </div>
+        <div class="post-content">
+          <div class="post-meta">
+            <span class="post-date">May 5, 2024</span>
+            <span class="post-readtime">7 min read</span>
+          </div>
+          <h3 class="post-title"><a href="single-post.html">Our Journey Developing the Neu-Palliative App</a></h3>
+          <p class="post-excerpt">Behind-the-scenes look at the challenges and breakthroughs in creating our palliative care application...</p>
+          <a href="single-post.html" class="read-more">Read Article</a>
+        </div>
+      </article> -->
+
+       <!-- <article class="blog-card featured">
+        <div class="post-media">
+          <img src="assets/images/blog-featured.jpg" alt="Featured post image" class="post-image">
+          <span class="post-category">Technology</span>
+        </div>
+        <div class="post-content">
+          <div class="post-meta">
+            <span class="post-date">May 15, 2024</span>
+            <span class="post-readtime">5 min read</span>
+          </div>
+          <h3 class="post-title"><a href="single-post.html">How AI is Transforming Palliative Care in 2024</a></h3>
+          <p class="post-excerpt">Explore the latest advancements in AI-powered tools that are revolutionizing patient care and support systems in palliative medicine...</p>
+          <a href="single-post.html" class="read-more">Continue Reading</a>
+        </div>
+      </article> -->
+    </div>
+  </div>
+</section>
+
+<!-- CSS Styles (add to your stylesheet) -->
+<style>
+.blog-section {
+  padding: 80px 0;
+  background: #f9fafc;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #718096;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.view-all {
+  color: #4299e1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card.featured {
+  grid-column: span 2;
+  display: flex;
+}
+
+.blog-card.featured .post-media {
+  flex: 1;
+}
+
+.blog-card.featured .post-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.post-media {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.blog-card.featured .post-media {
+  height: auto;
+}
+
+.post-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blog-card:hover .post-image {
+  transform: scale(1.05);
+}
+
+.post-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #4299e1;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.post-content {
+  padding: 20px;
+}
+
+.post-meta {
+  display: flex;
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.post-readtime {
+  margin-left: 15px;
+}
+
+.post-title {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.post-title a {
+  color: #2d3748;
+  text-decoration: none;
+}
+
+.post-excerpt {
+  color: #4a5568;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.read-more {
+  color: #4299e1;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.blog-categories {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.blog-categories h3 {
+  margin-bottom: 20px;
+  color: #2d3748;
+}
+
+.blog-categories ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.blog-categories li a {
+  background: #edf2f7;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: #2d3748;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.blog-categories li a:hover {
+  background: #4299e1;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .blog-card.featured {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+}
+</style>
+
   <div class="services section" id="services">
     <div class="container">
       <div class="row">
@@ -570,14 +829,14 @@
     </div>
   </div>
 
-  <!-- <div class="team section" id="team">
+  <div class="team section" id="team">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-4 col-md-4">
           <div class="team-member">
             <div class="main-content">
               <img src="assets/images/member-01.jpeg" alt="">
-              <span class="category">CEO & Co-Founder</span>
+              <span class="category">CEO </span>
               <h4>Shaheen KP</h4>
               <ul class="social-icons">
                 <li><a href="https://shaheenkp.in"><i class="fab fa-google"></i></a></li>
@@ -587,11 +846,11 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-4 col-md-4">
           <div class="team-member">
             <div class="main-content">
               <img src="assets/images/member-02 (2).jpg" alt="">
-              <span class="category">CTO & Co-Founder</span>
+              <span class="category">CTO </span>
               <h4> Mohamed Mazin</h4>
               <ul class="social-icons">
                 <li><a href="https://www.instagram.com/mazin3438/profilecard/?igsh=bmpwanA1bjIydTlm"><i class="fab fa-instagram"></i></a></li>
@@ -601,7 +860,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-4 col-md-4">
           <div class="team-member">
             <div class="main-content">
               <img src="assets/images/Member03.jpg" alt="">
@@ -615,7 +874,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-6">
+        <!-- <div class="col-lg-3 col-md-6">
           <div class="team-member">
             <div class="main-content">
               <img src="assets/images/member-04.jpg" alt="">
@@ -628,10 +887,10 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
-  </div>  -->
+  </div> 
 
   <div class="section testimonials">
     <div class="container">

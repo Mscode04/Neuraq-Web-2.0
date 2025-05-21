@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuraq Technologies Launches Revolutionary Palliative Care App | Healthcare Innovation</title>
+    <meta name="description" content="Discover how Neuraq Technologies' new mobile application is transforming palliative care through innovative technology developed by student innovators.">
+    
+    <!-- Open Graph / Social Media Meta Tags for better sharing -->
+    <meta property="og:title" content="Neuraq Technologies Launches Revolutionary Palliative Care App">
+    <meta property="og:description" content="Discover how Neuraq Technologies' new mobile application is transforming palliative care through innovative technology developed by student innovators.">
+    <meta property="og:image" content="https://yourwebsite.com/assets/images/blog-big-1.jpg">
+    <meta property="og:url" content="https://yourwebsite.com/articles/neuraq-palliative-care-app">
+    <meta property="og:type" content="article">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #e11d48;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-700: #374151;
+            --gray-900: #111827;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background-color: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header Styles */
+        .article-header {
+            text-align: center;
+            margin: 4rem 0 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .category-tag {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--gray-900);
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            color: var(--gray-700);
+            font-size: 0.95rem;
+        }
+        
+        /* Article Actions */
+        .article-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .action-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+        }
+        
+        .action-button:hover {
+            background-color: var(--gray-200);
+        }
+        
+        .action-button.print:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .action-button.share:hover {
+            color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        
+        /* Featured Image */
+        .featured-image {
+            width: 100%;
+            height: auto;
+            max-height: 630px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Article Content */
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.75rem;
+            color: var(--gray-700);
+        }
+        
+        .article-content h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin: 3.5rem 0 1.5rem;
+            color: var(--gray-900);
+            line-height: 1.3;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            color: var(--gray-900);
+        }
+        
+        .article-content ul, 
+        .article-content ol {
+            margin-bottom: 1.75rem;
+            padding-left: 2rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background-color: var(--gray-100);
+            border-left: 4px solid var(--primary);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box p {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0;
+            color: var(--gray-900);
+        }
+        
+        /* Team Section */
+        .team-section {
+            margin: 4rem 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-card {
+            background-color: var(--gray-100);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+        }
+        
+        .team-name {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            margin: 5rem 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--gray-200);
+            position: absolute;
+            left: -1rem;
+            top: -1rem;
+            line-height: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-title {
+            color: var(--gray-700);
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .article-actions {
+                justify-content: center;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                font-size: 12pt;
+                line-height: 1.5;
+                color: #000;
+                background: none;
+            }
+            
+            .container {
+                padding: 0;
+                max-width: 100%;
+            }
+            
+            .article-header {
+                margin: 1rem 0;
+                padding-bottom: 1rem;
+            }
+            
+            .article-title {
+                font-size: 18pt;
+                margin-bottom: 1rem;
+            }
+            
+            .article-actions,
+            .category-tag {
+                display: none;
+            }
+            
+            .featured-image {
+                max-height: 300px;
+                margin-bottom: 1rem;
+            }
+            
+            .article-content {
+                max-width: 100%;
+                font-size: 12pt;
+            }
+            
+            .article-content h2 {
+                font-size: 16pt;
+                margin: 2rem 0 1rem;
+            }
+            
+            .article-content h3 {
+                font-size: 14pt;
+                margin: 1.5rem 0 0.75rem;
+            }
+            
+            .highlight-box {
+                margin: 1.5rem 0;
+                padding: 1rem;
+            }
+            
+            .highlight-box p {
+                font-size: 12pt;
+            }
+            
+            /* Hide elements not needed for print */
+            .testimonials,
+            .team-section {
+                display: none;
+            }
+            
+            /* Add URL at bottom */
+            .article-content::after {
+                content: "Article URL: " attr(data-url);
+                display: block;
+                margin-top: 2rem;
+                font-size: 10pt;
+                color: #666;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <article class="container">
+        <div class="article-actions " style="margin-top: 10px;">
+            <button class="action-button share" onclick="shareArticle()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                </svg>
+                Share
+            </button>
+            <button class="action-button print" onclick="window.print()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                    <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                </svg>
+                Print
+            </button>
+        </div>
+        
+        <header class="article-header">
+            <span class="category-tag">Healthcare Innovation</span>
+            <h1 class="article-title">Neuraq Technologies Launches Revolutionary Mobile App for Palliative Care</h1>
+            <div class="article-meta">
+                <span>Published: May 20, 2025</span>
+                <span>Location: Malappuram, Kerala</span>
+                <span>6 min read</span>
+            </div>
+        </header>
+        
+        <img src="assets/images/blog-big-1.jpg" alt="Doctor using mobile app with elderly patient" class="featured-image" loading="lazy" width="1200" height="630">
+        
+        <div class="article-content" data-url="https://yourwebsite.com/articles/neuraq-palliative-care-app">
+            <p>In a groundbreaking development for India's healthcare sector, Neuraq Technologies has unveiled a specialized mobile application designed to revolutionize palliative care services. The innovative solution aims to streamline patient management, reduce administrative burdens on healthcare workers, and ultimately improve the quality of care for patients with chronic and life-limiting illnesses.</p>
+            
+            <h2>Transforming Palliative Care Through Technology</h2>
+            <p>The newly launched app provides a comprehensive suite of features tailored specifically for palliative care units:</p>
+            
+            <ul>
+                <li><strong>Digital Patient Records:</strong> Secure cloud-based storage for medical histories, treatment plans, and progress notes</li>
+                <li><strong>Automated Scheduling:</strong> Intelligent appointment and follow-up reminder system for patients and caregivers</li>
+                <li><strong>Symptom Tracking:</strong> Real-time monitoring of patient symptoms with predictive analytics</li>
+                <li><strong>Care Coordination:</strong> Seamless communication between doctors, nurses, and family members</li>
+                <li><strong>Resource Allocation:</strong> Smart inventory management for medications and medical equipment</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p>"This app represents a significant leap forward in making palliative care more accessible and efficient. By reducing paperwork and administrative tasks, we're enabling healthcare providers to focus on what truly matters - compassionate patient care."</p>
+            </div>
+            
+            <h2>The Launch Event</h2>
+            <p>The application was officially introduced at the "Arike" patient gathering organized by Makkaraparamba Palliative in Malappuram. The launch ceremony was graced by the presence of Dr. P. Unni, a respected figure in palliative medicine, with the app formally unveiled by Muhammad Musthafa Tharayil, Managing Director of Tharayil Business Group.</p>
+            
+            <h2>The Future of Palliative Care Technology</h2>
+            <p>Neuraq Technologies plans to continuously enhance the app based on user feedback, with upcoming features including AI-powered symptom prediction, regional language support, and integration with government health databases. The company envisions this as the first step in a broader initiative to digitize and improve community healthcare services across India.</p>
+            
+            <p>This student-led innovation serves as a powerful example of how technology can be harnessed to address critical social needs while creating opportunities for young talent to contribute meaningfully to society's welfare.</p>
+        </div>
+    </article>
+
+    <script>
+        function shareArticle() {
+            // Check if the Web Share API is supported
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    text: document.querySelector('meta[name="description"]').content,
+                    url: window.location.href,
+                })
+                .then(() => console.log('Successful share'))
+                .catch((error) => console.log('Error sharing:', error));
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+        }
+        
+        // Add print styles dynamically
+        function beforePrint() {
+            document.body.classList.add('printing');
+        }
+        
+        function afterPrint() {
+            document.body.classList.remove('printing');
+        }
+        
+        // Add event listeners for print detection
+        if (window.matchMedia) {
+            const mediaQueryList = window.matchMedia('print');
+            mediaQueryList.addListener((mql) => {
+                if (mql.matches) {
+                    beforePrint();
+                } else {
+                    afterPrint();
+                }
+            });
+        }
+        
+        window.onbeforeprint = beforePrint;
+        window.onafterprint = afterPrint;
+    </script>
+</body>
+</html>
